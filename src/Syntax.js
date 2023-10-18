@@ -1,41 +1,62 @@
-//비구조화 할당 문법 === 구조 분해 할당 문법
-//배열의 경우.
 
-//기본 할당 배열▼//
-const arr = [1, 2, 3];
-const x = arr[0];
-const y = arr[1];
-const z = arr[2];
-//비구조화 할당▼//
-const [a, b, c] = [1, 2, 3];
 
-const deArr = [...arr]; //전개 연산자, arr의 객체를 전개하여 새로운 배열을 생성.
-//출력▼//
-const TestArr = ()=>{
-    return(console.log(`기본 할당 배열: ${x}, ${y}, ${z} 기존 배열 : ${arr} 비구조 할당 배열 : ${a}, ${b}, ${c}, 전개 연산 : ${deArr}`))
+
+const first = () => {
+   console.log('안녕하세요');
+
 }
 
-//객체의 경우.
+const fruit = ['사과','배','포도'];
+// const MyFruit = fruit[0];
+// const MyFruit2 = fruit[1];
+// const MyFruit3 = fruit[2];
 
-//기본 할당 객체▼//
-const obj = {
-    X : 'value1',
-    Y : 'value2',
-    Z : 'value3',
+const [MyFruit, MyFruit2, MyFruit3] = ['사과','배','포도'];
+const apple = {
+    color : 'red',
+    kind : 'fruit',
+    taste : 'good'
 }
-const X = obj.X;
-const Y = obj.Y;
-const Z = obj.Z;
+// const h1 = document.querySelector('.hi');
+// console.log(h1.props);
+// const col = apple.color
+// const color = () => {
+//     console.log(col);
+// }
+// const kin = apple.kind
 
-//비구조화 할당▼//
-const {A, B, C} = {                             
-    A : 'value1',
-    B : 'value2',
-    C : 'vallu3',
-}                                                       
-const deObj = {...obj} //전개 연산자
-const TestObj = ()=>{
-    return(console.log(`기본 구조 객체 = X : ${X}, Y : ${Y}, Z : ${Z} 기존 객체 : ${JSON.stringify(obj)} 비구조 할당 객체 = A : ${A}, B : ${B}, C : ${C} 전개 연산 : ${JSON.stringify(deObj)}`))
+// const kind = () => {
+//     console.log(kin)
+// }
+// const tas = apple.taste;
+// const taste = () => {
+//     console.log(tas)
+// }
+// const [col, kin, tas] = [apple.color, apple.kind, apple.taste]
+const {color, kind, taste} = {
+    color : 'red',
+    kind : 'fruit',
+    taste : 'good'
 }
- 
-export {TestArr, TestObj};
+
+
+const obj = {...apple};
+
+
+const number = 3;
+
+let num 
+
+const second = () => {
+    num = 3;
+    console.log(number);
+    console.log(color,kind,taste);
+    console.log(`${JSON.stringify(obj)}`);
+    
+
+}
+const consoleFruit = () => {
+    console.log(MyFruit);
+}
+
+export {first, second, consoleFruit};
